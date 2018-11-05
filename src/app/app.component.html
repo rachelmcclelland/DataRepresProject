@@ -1,0 +1,15 @@
+<mat-toolbar color="primary"> 
+    <mat-toolbar-row>
+            <span class="title-center">
+        Employee Details
+    </span>
+      </mat-toolbar-row>
+    
+      <mat-toolbar-row>
+
+  <button mat-button [routerLink]="['/create']" color="Warn">Create</button>
+  <button mat-button [routerLink]="['/list']">List</button>
+</mat-toolbar-row>
+ </mat-toolbar>
+ 
+<router-outlet></router-outlet>
