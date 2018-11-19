@@ -31,16 +31,6 @@ app.use(function(req, res, next) {
     "Origin, X-Requested-With, Content-Type, Accept");
     next();
     });
-    
-/*app.post('/name', function(req, res){
-    res.send("Hello you sent " +
-    req.body.firstname + " " +
-    req.body.lastname);
-})
-
-app.get('/', function (req, res) {
-   res.send('Hello from Express');
-})*/
 
 app.post('/api/posts', function(req, res){
     console.log("post successful");
@@ -65,14 +55,6 @@ app.get('/api/posts', function(req, res){
 
 })
 
-
-var server = app.listen(8081, function () {
-   var host = server.address().address
-   var port = server.address().port
-   
-   console.log("Example app listening at http://%s:%s", host, port)
-})
-
 app.delete('/api/posts/:id', function(req, res){
 
     console.log(req.params.id);
@@ -81,4 +63,33 @@ app.delete('/api/posts/:id', function(req, res){
     PostModel.deleteOne({_id: req.params.id}, function(err){
 
     })
+})
+
+app.get('/api/posts/:id', function(req, res){
+    console.log(req.params.id);
+
+    PostModel.findById(req.params.id, function(err, data){
+        res.json(data);
+    });
+})
+
+app.put('/api/posts/:id', function(req, res){
+    console.log(req.params.id);
+
+    console.log(req.body.name);
+    console.log(req.body.dob);
+    console.log(req.body.address);
+
+    PostModel.findByIdAndUpdate(req.params.id, req.body, function(err, data){
+        if(err)
+            res.send(err)
+        res.send(data);
+    })
+})
+
+var server = app.listen(8081, function () {
+   var host = server.address().address
+   var port = server.address().port
+   
+   console.log("Example app listening at http://%s:%s", host, port)
 })

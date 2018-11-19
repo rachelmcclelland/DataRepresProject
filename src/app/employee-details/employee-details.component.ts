@@ -24,8 +24,9 @@ export class EmployeeDetailsComponent implements OnInit {
 
   onDelete(id:String){
     console.log(id);
-    this.ps.deletePost(id).subscribe(); 
+    
     this.ngOnInit();
+    this.ps.deletePost(id).subscribe(); 
   }
 
 }

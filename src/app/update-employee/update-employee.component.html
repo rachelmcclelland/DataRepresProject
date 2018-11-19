@@ -1,0 +1,37 @@
+<mat-card>
+  <form (submit)="onUpdatePost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="name"
+        ngModel = {{details.name}}
+        required
+        minlength="3"
+        #title="ngModel">
+      <mat-error *ngIf="title.invalid">Please enter Employees name.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        name="dob"
+        ngModel = {{details.dob}}
+        required
+        #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Please enter Employees DOB.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        name="address"
+        ngModel = {{details.address}}
+        required
+        #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Please enter Employees address.</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit">Update Post</button>
+  </form>
+</mat-card>

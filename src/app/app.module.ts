@@ -15,6 +15,8 @@ import { MatInputModule,
   MatExpansionModule} from '@angular/material';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 const appRoutes: Routes = [
   {
@@ -24,6 +26,10 @@ const appRoutes: Routes = [
   {
     path: 'create',
     component: CreateEmployeeComponent
+  },
+  {
+    path: 'edit/:id',
+    component: UpdateEmployeeComponent
   }
 ];
 
@@ -32,7 +38,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CreateEmployeeComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    UpdateEmployeeComponent,
+    MainPageComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

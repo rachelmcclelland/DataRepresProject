@@ -15,7 +15,6 @@ export class PostService {
     }
 
   private posts: Post[] = [];
-  //private postsUpdated = new Subject<Post[]>();
 
   getPosts() {
     return [...this.posts];
@@ -28,5 +27,14 @@ export class PostService {
 
   deletePost(id:String): Observable<any>{
     return this.http.delete("http://localhost:8081/api/posts/" + id);
+  }
+
+  getDetails(id:String): Observable<any>{
+    return this.http.get("http://localhost:8081/api/posts/" + id);
+  }
+
+  updateEmployee(id:String, name:string, dob:string, address:string): Observable<any>{
+    const post: Post = {name: name, dob: dob, address: address};
+    return this.http.put("http://localhost:8081/api/posts/"+ id, post);
   }
 }

@@ -8,9 +8,9 @@
     <p>{{ post.dob }}</p>
     <p>{{ post.address }}</p>
     <mat-action-row>
-      <button mat-button color="primary">EDIT</button>
+      <button mat-button [routerLink]="['/edit', post._id]" color="primary">EDIT</button>
       <button mat-button (click)="onDelete(post._id)" color="warn">DELETE</button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
-<p class="info-text mat-body-1" *ngIf="posts.length <= 0">No posts added yet!</p> 
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0">No Employee Details available!</p> 
