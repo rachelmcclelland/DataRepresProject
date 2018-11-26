@@ -3,6 +3,7 @@
     <mat-form-field>
       <input
         matInput
+        placeholder="Full Name"
         type="text"
         name="name"
         ngModel
@@ -14,6 +15,7 @@
     <mat-form-field>
       <textarea
         matInput
+        placeholder="Date of Birth (dd/mm/yy)"
         name="dob"
         ngModel
         required
@@ -23,6 +25,7 @@
     <mat-form-field>
       <textarea
         matInput
+        placeholder="Address"
         name="address"
         ngModel
         required
@@ -31,7 +34,7 @@
     </mat-form-field>
     <button
       mat-raised-button
-      color="accent"
-      type="submit">Save Post</button>
+      color="primary"
+      type="submit">Save</button>
   </form>
 </mat-card>

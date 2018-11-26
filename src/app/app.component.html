@@ -1,15 +1,15 @@
 <mat-toolbar color="primary"> 
     <mat-toolbar-row>
             <span class="title-center">
-        Employee Details
+        Employee Database
     </span>
       </mat-toolbar-row>
     
       <mat-toolbar-row>
 
-  <button mat-button [routerLink]="['/create']" color="Warn">Create</button>
-  <button mat-button [routerLink]="['/list']">List</button>
+  <button mat-raised-button [routerLink]="['/create']" color="primary">Add Employee</button>
+  <button mat-raised-button [routerLink]="['/list']" color = "primary">Employee Details</button>
 </mat-toolbar-row>
  </mat-toolbar>
- 
+
 <router-outlet></router-outlet>

@@ -8,7 +8,7 @@ import {PostService} from '../services/post.service';
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
-  
+
   constructor(private service:PostService) { }
 
   onAddPost(form: NgForm) {
@@ -19,9 +19,10 @@ export class CreateEmployeeComponent implements OnInit {
     form.resetForm();
   }
 
-
   ngOnInit() {
       
   }
+
+
 
 }

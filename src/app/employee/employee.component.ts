@@ -4,11 +4,11 @@ import {PostService} from '../services/post.service';
 import { NgForm } from "@angular/forms";
 
 @Component({
-  selector: 'app-update-employee',
-  templateUrl: './update-employee.component.html',
-  styleUrls: ['./update-employee.component.css']
+  selector: 'app-employee',
+  templateUrl: './employee.component.html',
+  styleUrls: ['./employee.component.css']
 })
-export class UpdateEmployeeComponent implements OnInit {
+export class EmployeeComponent implements OnInit {
 
   details: any = [];
 
@@ -16,19 +16,15 @@ export class UpdateEmployeeComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.route.snapshot.params['id']);
-
+    
     this.service.getDetails(this.route.snapshot.params['id']).subscribe(data => 
-    {
-      this.details = data;
-    });
+      {
+        this.details = data;
+        console.log(this.details.name);  
+        console.log(this.details.length);
+      });
+      
   }
 
-  onUpdatePost(form: NgForm)
-  {
-    this.service.updateEmployee(this.details._id, form.value.name, form.value.dob, form.value.address).subscribe(() =>
-    {
-      this.router.navigate(['/list']);
-    });
-  }
 
 }

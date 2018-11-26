@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">{{details.name}}'s Details</mat-toolbar>
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <p>{{details.name}}</p>
+    <p>{{details.dob}}</p>
+    <P>{{details.address}}</P>
+    <mat-action-row>
+      <button mat-button [routerLink]="['/edit', details._id]" color="primary">EDIT</button>
+      <button mat-button (click)="onDelete(post._id)" color="warn">DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<!-- <p class="info-text mat-body-1" *ngIf="details.length <= 0">No posts added yet!</p>  -->

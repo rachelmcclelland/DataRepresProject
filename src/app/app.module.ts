@@ -16,7 +16,7 @@ import { MatInputModule,
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
-import { MainPageComponent } from './main-page/main-page.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 const appRoutes: Routes = [
   {
@@ -30,6 +30,10 @@ const appRoutes: Routes = [
   {
     path: 'edit/:id',
     component: UpdateEmployeeComponent
+  },
+  {
+    path: 'details/:id',
+    component: EmployeeComponent
   }
 ];
 
@@ -40,7 +44,7 @@ const appRoutes: Routes = [
     CreateEmployeeComponent,
     EmployeeDetailsComponent,
     UpdateEmployeeComponent,
-    MainPageComponent
+    EmployeeComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
