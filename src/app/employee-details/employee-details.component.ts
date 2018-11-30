@@ -22,11 +22,6 @@ export class EmployeeDetailsComponent implements OnInit {
     });
   }
 
-  onDelete(id:String){
-    console.log(id);
-    
-    this.ngOnInit();
-    this.ps.deletePost(id).subscribe(); 
-  }
+
 
 }

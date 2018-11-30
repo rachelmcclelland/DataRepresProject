@@ -20,11 +20,15 @@ export class EmployeeComponent implements OnInit {
     this.service.getDetails(this.route.snapshot.params['id']).subscribe(data => 
       {
         this.details = data;
-        console.log(this.details.name);  
-        console.log(this.details.length);
-      });
-      
+      }); 
   }
 
+  onDelete(id:String){
+    console.log(id);
+    
+    this.ngOnInit();
+    this.service.deletePost(id).subscribe(); 
+    this.router.navigate(['/list']);
+  }
 
 }

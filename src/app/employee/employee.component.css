@@ -5,3 +5,8 @@ mat-form-field,
 textarea {
   width: 100%;
 }
+
+.mat-toolbar{
+  background-color: rgb(194, 13, 103);
+  color: white;
+}
