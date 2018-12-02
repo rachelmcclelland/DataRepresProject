@@ -5,8 +5,8 @@
     <p>Date of Birth: {{details.dob}}</p>
     <P>Address: {{details.address}}</P>
     <mat-action-row>
-      <button mat-button [routerLink]="['/edit', details._id]" color="primary">EDIT</button>
-      <button mat-button (click)="onDelete(details._id)" color="warn">DELETE</button>
+      <button mat-raised-button [routerLink]="['/edit', details._id]" >EDIT</button>
+      <button mat-raised-button (click)="onDelete(details._id)" color="warn">DELETE</button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>

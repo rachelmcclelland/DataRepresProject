@@ -43,8 +43,6 @@ app.post('/api/posts', function(req, res){
         dob: req.body.dob,
         address: req.body.address
     });
-
-  //  res.send("Post added successfully");
 })
 
 app.get('/api/posts', function(req, res){

@@ -20,11 +20,13 @@ export class PostService {
     return [...this.posts];
   }
 
-  addPost(name: string, dob: string, address: string): Observable<any> {
+  //add an employee to the database
+  addDetails(name: string, dob: string, address: string): Observable<any> {
     const post: Post = {name: name, dob: dob, address: address};
     return this.http.post("http://localhost:8081/api/posts",post);
   }
 
+  //delete the details about an employee with a certain ID
   deletePost(id:String): Observable<any>{
     return this.http.delete("http://localhost:8081/api/posts/" + id);
   }
@@ -33,6 +35,7 @@ export class PostService {
     return this.http.get("http://localhost:8081/api/posts/" + id);
   }
 
+  //update and save the new information about the employee
   updateEmployee(id:String, name:string, dob:string, address:string): Observable<any>{
     const post: Post = {name: name, dob: dob, address: address};
     return this.http.put("http://localhost:8081/api/posts/"+ id, post);

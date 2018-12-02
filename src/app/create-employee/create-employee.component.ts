@@ -13,7 +13,8 @@ export class CreateEmployeeComponent implements OnInit {
 
   onAddPost(form: NgForm) {
 
-    this.service.addPost(form.value.name, form.value.dob, form.value.address).subscribe();
+    //calls the addDetails method in the service and passes down the informaion
+    this.service.addDetails(form.value.name, form.value.dob, form.value.address).subscribe();
     
     console.log(form.value);
     form.resetForm();
